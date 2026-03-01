@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TPL | Explore More</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --gold: #b8860b; --bg: #0a0a0a; }
+        body { background: #000; color: #fff; font-family: 'Inter', sans-serif; padding: 40px 5%; margin: 0; }
+        
+        /* Heading size matched to index page */
+        h2 { font-family: 'Bungee'; color: var(--gold); text-align: center; font-size: 32px; margin-bottom: 20px; }
+        
+        .container { max-width: 800px; margin: 0 auto; }
+
+        /* CLEAN EXPLORE MORE HEADER */
+        .explore-header {
+            padding: 20px 0 50px;
+            text-align: center;
+        }
+
+        .vision-text {
+            line-height: 1.8;
+            color: #ddd;
+            font-size: 16px;
+            max-width: 700px;
+            margin: 25px auto 0;
+        }
+        
+        .vision-highlight {
+            color: var(--gold);
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        /* TABS & CARDS */
+        .tab-controls { display: flex; justify-content: center; gap: 20px; margin-bottom: 30px; }
+        .tab-btn {
+            background: none; border: 2px solid #333; color: #666; padding: 12px 25px;
+            border-radius: 50px; font-family: 'Bungee'; cursor: pointer; transition: 0.3s;
+        }
+        .tab-btn.active {
+            border-color: var(--gold); color: var(--gold);
+            box-shadow: 0 0 15px rgba(184, 134, 11, 0.4);
+        }
+
+        .blueprint-card { 
+            display: none; border: 3px solid var(--gold); border-radius: 30px; 
+            padding: 40px; background: var(--bg); box-shadow: 15px 15px 0px #000;
+            animation: fadeIn 0.4s ease;
+        }
+        .blueprint-card.active { display: block; }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        /* CENTERED DOWNLOAD BUTTON */
+        .download-btn {
+            display: block; width: fit-content; margin: 30px auto 0;
+            padding: 18px 40px; background: #fff; color: #000;
+            border-radius: 50px; font-family: 'Bungee'; text-decoration: none;
+            text-align: center; transition: 0.3s; font-size: 14px;
+        }
+        .download-btn:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(255,255,255,0.2); }
+
+        /* FAQ ACCORDION */
+        .faq-item { border-bottom: 1px solid #222; }
+        .faq-question { 
+            width: 100%; background: none; border: none; color: var(--gold); 
+            font-family: 'Bungee'; text-align: left; padding: 25px 0; 
+            cursor: pointer; display: flex; justify-content: space-between; font-size: 14px; 
+        }
+        .faq-answer { max-height: 0; overflow: hidden; transition: 0.3s ease-out; color: #888; font-size: 14px; line-height: 1.6; }
+        .faq-item.active .faq-answer { max-height: 400px; padding-bottom: 20px; }
+
+        .back-link { display: block; text-align: center; margin-top: 40px; color: #444; text-decoration: none; font-size: 12px; font-family: 'Bungee'; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    
+    <div class="explore-header">
+        <h2>EXPLORE MORE</h2>
+        <div class="vision-text">
+            <p>
+                Step into the <span class="vision-highlight">Narrative Economy</span>. TompoloCoin ($TPL) is building a decentralized legacy on Solana where meme culture meets serious business utility.
+            </p>
+            <p style="font-size: 14px; color: #888;">
+                Learn how we empower stewards through a strategic <span class="vision-highlight">8-month lock-up</span> rewards system and provide real-world grants to the next generation of builders. This is the blueprint for community growth.
+            </p>
+        </div>
+    </div>
+
+    <div class="tab-controls">
+        <button class="tab-btn active" onclick="openTab('whitepaper')">WHITEPAPER</button>
+        <button class="tab-btn" onclick="openTab('faq')">F.A.Q</button>
+    </div>
+
+    <div id="whitepaper" class="blueprint-card active">
+        <div style="text-align: center;">
+            <h3 style="font-family: 'Bungee'; color: var(--gold); font-size: 20px;">THE $TPL MANIFESTO</h3>
+            <p style="color: #ccc; line-height: 1.7; font-size: 15px;">Explore our technical framework, economic safeguards, and the full roadmap for the TompoloCoin ecosystem. Read the full vision below.</p>
+            <a href="TompoloCoin-Whitepaper.pdf" class="download-btn" download>DOWNLOAD FULL PDF</a>
+        </div>
+    </div>
+
+    <div id="faq" class="blueprint-card">
+        <div class="faq-item">
+            <button class="faq-question">HOW DO I GET A BUSINESS GRANT? <span>+</span></button>
+            <div class="faq-answer"><p>Verified stewards can submit a "Battle Plan" via the Application page. The Council reviews submissions based on community value and feasibility.</p></div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">IS THE LIQUIDITY POOL SAFE? <span>+</span></button>
+            <div class="faq-answer"><p>Absolutely. 100% of the initial liquidity is burned and locked at launch to ensure a rug-proof foundation for all stewards.</p></div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">WHAT ARE STEWARDSHIP REWARDS? <span>+</span></button>
+            <div class="faq-answer"><p>Stewards are high-conviction holders. By maintaining your position for the 8-month lock-up period and verifying your wallet, you unlock exclusive DAO benefits.</p></div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">WHO RUNS THE DAO? <span>+</span></button>
+            <div class="faq-answer"><p>While a founding council facilitates the roadmap, the ultimate direction of the grant treasury is determined by the community of verified stewards.</p></div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">WHERE CAN I TRADE $TPL? <span>+</span></button>
+            <div class="faq-answer"><p>You can trade $TPL on major Solana DEXs like Raydium and Jupiter using the official contract address.</p></div>
+        </div>
+    </div>
+
+    <a href="index.html" class="back-link">← RETURN HOME</a>
+</div>
+
+<script>
+    function openTab(tabName) {
+        document.querySelectorAll('.blueprint-card').forEach(card => card.classList.remove('active'));
+        document.getElementById(tabName).classList.add('active');
+        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+        event.currentTarget.classList.add('active');
+    }
+    document.querySelectorAll('.faq-question').forEach(q => {
+        q.addEventListener('click', () => { q.parentElement.classList.toggle('active'); });
+    });
+</script>
+
+</body>
+</html>
